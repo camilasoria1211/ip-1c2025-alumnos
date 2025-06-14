@@ -11,8 +11,12 @@ def getAllImages():
     imagenes_pokemon= transport.getAllImages() #imagenes obtenidas de la API. Se encuentran en Transport.py
     card_pokemon=[]
     for pokemon in imagenes_pokemon:
-        cards=translator.fromRequestIntoCard(pokemon) #transformamos a card
-        card_pokemon.append(cards) #se ingresan las cards al listado
+        card=translator.fromRequestIntoCard(pokemon) #transformamos a card
+        types_aux=[]
+        for t in card.types:
+            types_aux.append(get_type_icon_url_by_name(t))
+        card.types_imgs=types_aux #obtenemos el icono del tipo
+        card_pokemon.append(card) #se ingresan las cards al listado
     return card_pokemon
 
     # debe ejecutar los siguientes pasos:
