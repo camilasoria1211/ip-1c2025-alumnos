@@ -1,0 +1,17 @@
+{% extends 'header.html' %} {% block content %}
+    {% load static %}
+    <main style="text-align: center; padding: 50px;">
+        <h2>¡Lo sentimos! No pudimos realizar esta función :c </h2>
+        <p style="font-size: 1.5em; color: gray;">Esta sección estará disponible próximamente</p>
+        <p>Estamos trabajando para traer tus Pokémon favoritos aquí.</p>
+        <img src="{% static 'pikachutriste.jpeg' %}" alt="Pokémon" style="max-width: 400px; margin-top: 20px;">
+        <br><br>
+        <a href="{% url 'home' %}" style="text-decoration: none; background-color: #007bff; color: white; padding: 10px 20px; border-radius: 5px;">Volver a galeria</a>
+    </main>
+
+    <footer>
+        </footer>
+</body>
+
+ {% endblock %}
+
